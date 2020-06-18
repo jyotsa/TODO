@@ -1,11 +1,15 @@
 package com.example.todomvvm.tasks;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.text.InputType;
 
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +49,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         mItemClickListener = listener;
     }
 
+
+
+
     /**
      * Called when ViewHolders are created to fill a RecyclerView.
      *
@@ -70,12 +77,15 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         // Determine the values of the wanted data
         TaskEntry taskEntry = mTaskEntries.get(position);
         String description = taskEntry.getDescription();
+        String note = taskEntry.getNote();
         int priority = taskEntry.getPriority();
         String updatedAt = dateFormat.format(taskEntry.getUpdatedAt());
-
+        String duedate = taskEntry.getDuedate();
         //Set values
         holder.taskDescriptionView.setText(description);
         holder.updatedAtView.setText(updatedAt);
+        holder.noteView.setText(note);
+
 
         // Programmatically set the text and color for the priority TextView
         String priorityString = "" + priority; // converts int to String
@@ -121,7 +131,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         return mTaskEntries.size();
     }
 
-    public List<TaskEntry> getTasks(){
+    public List<TaskEntry> getTasks() {
         return mTaskEntries;
     }
 
@@ -145,6 +155,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         TextView taskDescriptionView;
         TextView updatedAtView;
         TextView priorityView;
+        TextView noteView;
+        TextView tvw;
+        CheckBox selection;
+        DatePickerDialog picker;
+        EditText eText;
 
         /**
          * Constructor for the TaskViewHolders.
@@ -157,13 +172,23 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             taskDescriptionView = itemView.findViewById(R.id.taskDescription);
             updatedAtView = itemView.findViewById(R.id.taskUpdatedAt);
             priorityView = itemView.findViewById(R.id.priorityTextView);
-            itemView.setOnClickListener(this);
-        }
+            noteView = itemView.findViewById(R.id.tasknote);
+            tvw=itemView.findViewById(R.id.textView1);
+            eText=itemView.findViewById(R.id.editText1);
+            eText.setInputType(InputType.TYPE_NULL);
+
+
+
+            }
 
         @Override
         public void onClick(View view) {
             int elementId = mTaskEntries.get(getAdapterPosition()).getId();
             mItemClickListener.onItemClickListener(elementId);
         }
+
+
     }
+
+
 }

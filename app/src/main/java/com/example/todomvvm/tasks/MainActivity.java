@@ -7,10 +7,15 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import android.widget.CheckBox;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckedTextView;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import java.util.Calendar;
 
 import com.example.todomvvm.addedittask.AddEditTaskActivity;
 import com.example.todomvvm.R;
@@ -107,4 +112,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
         intent.putExtra(AddEditTaskActivity.EXTRA_TASK_ID, itemId);
         startActivity(intent);
     }
+
+
+
 }

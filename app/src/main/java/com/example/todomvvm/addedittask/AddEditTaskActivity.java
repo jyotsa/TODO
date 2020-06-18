@@ -4,18 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.todomvvm.R;
 import com.example.todomvvm.database.AppDatabase;
 import com.example.todomvvm.database.Repository;
 import com.example.todomvvm.database.TaskEntry;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class AddEditTaskActivity extends AppCompatActivity {
@@ -36,9 +43,12 @@ public class AddEditTaskActivity extends AppCompatActivity {
     EditText mEditText;
     RadioGroup mRadioGroup;
     Button mButton;
-
+    EditText AddNote;
+    Button  btnGet;
+    EditText eText;
+    TextView tvw;
     private int mTaskId = DEFAULT_TASK_ID;
-
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     AddEditTaskViewModel viewModel;
 
@@ -92,13 +102,13 @@ public class AddEditTaskActivity extends AppCompatActivity {
      */
     private void initViews() {
         mEditText = findViewById(R.id.editTextTaskDescription);
+        AddNote =findViewById(R.id.Addnote);
         mRadioGroup = findViewById(R.id.radioGroup);
-
-        mButton = findViewById(R.id.saveButton);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        btnGet=(Button)findViewById(R.id.button1);
+        btnGet.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                onSaveButtonClicked();
+            public void onClick(View v) {
+                tvw.setText("Selected Date: "+ eText.getText());
             }
         });
     }
@@ -113,6 +123,7 @@ public class AddEditTaskActivity extends AppCompatActivity {
             return;
         }
         mEditText.setText(task.getDescription());
+        AddNote.setText(task.getNote());
         setPriorityInViews(task.getPriority());
 
     }
@@ -124,9 +135,15 @@ public class AddEditTaskActivity extends AppCompatActivity {
     public void onSaveButtonClicked() {
         // Not yet implemented
         String description = mEditText.getText().toString();
+        String note = AddNote.getText().toString();
         int priority = getPriorityFromViews();
         Date date = new Date();
-        TaskEntry todo = new TaskEntry(description, priority, date);
+        final Calendar cldr = Calendar.getInstance();
+        int day = cldr.get(Calendar.DAY_OF_MONTH);
+        int month = cldr.get(Calendar.MONTH);
+        int year = cldr.get(Calendar.YEAR);
+        TaskEntry todo = new TaskEntry(description,note, priority, date);
+
         if(mTaskId == DEFAULT_TASK_ID)
             viewModel.insertTask(todo);
         else{
@@ -174,4 +191,9 @@ public class AddEditTaskActivity extends AppCompatActivity {
                 ((RadioGroup) findViewById(R.id.radioGroup)).check(R.id.radButton3);
         }
     }
+
+
+
+
+
 }

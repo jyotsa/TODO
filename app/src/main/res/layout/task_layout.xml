@@ -10,45 +10,80 @@
     android:paddingTop="8dp"
     tools:context="com.example.android.todolist.MainActivity">
 
+
+
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        >
+        <CheckBox
+            android:id="@+id/checkBox"
 
-        <!-- TextView that displays the description -->
-        <TextView
-            android:id="@+id/taskDescription"
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:layout_width="match_parent"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/primary_text_light"
-            tools:text="Description" />
 
-        <!-- TextView that displays the update date -->
-        <TextView
-            android:id="@+id/taskUpdatedAt"
-            style="@style/TextAppearance.AppCompat.Small"
-            android:layout_width="match_parent"
+            android:text="" />
+
+
+        <LinearLayout
+            android:layout_width="312dp"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/primary_text_light"
-            tools:text="11/11/1111" />
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/taskDescription"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                tools:text="Description" />
+
+            <!-- TextView that displays the update date -->
+
+            <TextView
+                android:id="@+id/tasknote"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                tools:text="Note" />
+
+
+            <TextView
+                android:id="@+id/taskUpdatedAt"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_light"
+                tools:text="11/11/1111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textColor="#000"
+                android:textSize="24sp"/>
 
     </LinearLayout>
 
+        <TextView
+            android:id="@+id/priorityTextView"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/priority_circle"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@android:color/primary_text_light"
+            tools:text="1" />
+    </LinearLayout>
+
     <!-- A priority circle that is colored in programmatically in the adapter code -->
-    <TextView
-        android:id="@+id/priorityTextView"
-        style="@style/TextAppearance.AppCompat.Small"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/priority_circle"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="@android:color/primary_text_light"
-        tools:text="1" />
 
 </LinearLayout>
