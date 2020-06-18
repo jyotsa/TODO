@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
 
         android:hint="@string/add_note"
-        android:paddingBottom="16dp" />
+        android:paddingBottom="14dp" />
 
     <EditText
         android:id="@+id/editText1"

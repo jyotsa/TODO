@@ -49,6 +49,7 @@ public class AddEditTaskActivity extends AppCompatActivity implements DatePicker
     EditText eText;
     TextView tvw;
     private int mTaskId = DEFAULT_TASK_ID;
+    private String dueDate;
 
     AddEditTaskViewModel viewModel;
 
@@ -99,6 +100,7 @@ public class AddEditTaskActivity extends AppCompatActivity implements DatePicker
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         String date = year + "-" + month + "-" + dayOfMonth;
+        dueDate = date;
         tvw.setText(date);
     }
 
@@ -116,6 +118,13 @@ public class AddEditTaskActivity extends AppCompatActivity implements DatePicker
             public void onClick(View v) {
                 DialogFragment dialogFragment = new DatePickerFrag();
                 dialogFragment.show(getSupportFragmentManager(), "date picker");
+            }
+        });
+        mButton = findViewById(R.id.saveButton);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSaveButtonClicked();
             }
         });
     }
@@ -149,7 +158,7 @@ public class AddEditTaskActivity extends AppCompatActivity implements DatePicker
         int day = cldr.get(Calendar.DAY_OF_MONTH);
         int month = cldr.get(Calendar.MONTH);
         int year = cldr.get(Calendar.YEAR);
-        TaskEntry todo = new TaskEntry(description, note, priority, date);
+        TaskEntry todo = new TaskEntry(description, note, priority, date, dueDate);
 
         if (mTaskId == DEFAULT_TASK_ID)
             viewModel.insertTask(todo);
@@ -201,3 +210,4 @@ public class AddEditTaskActivity extends AppCompatActivity implements DatePicker
 
 
 }
+

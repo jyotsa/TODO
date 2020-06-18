@@ -26,7 +26,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-
 public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemClickListener {
 
     // Constant for logging
@@ -116,3 +115,4 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.ItemC
 
 
 }
+

@@ -15,25 +15,25 @@ public class TaskEntry {
     private String description;
     private String note;
     private int priority;
-    private String duedate;
-    private Date etext;
+    @ColumnInfo(name="due_date")
+    private String due_date;
     @ColumnInfo(name="updated_at")
     private Date updatedAt;
 
     @Ignore
-    public TaskEntry(String description,String note, int priority, Date updatedAt) {
+    public TaskEntry(String description,String note, int priority, Date updatedAt, String due_date) {
         this.description = description;
         this.note=note;
-        this.etext=etext;
         this.priority = priority;
         this.updatedAt = updatedAt;
+        this.due_date = due_date;
     }
 
-    public TaskEntry(int id, String description,String note, String duedate, int priority, Date updatedAt) {
+    public TaskEntry(int id, String description,String note, String due_date, int priority, Date updatedAt) {
         this.id = id;
         this.description = description;
         this.note=note;
-        this.duedate=duedate;
+        this.due_date = due_date;
         this.priority = priority;
         this.updatedAt = updatedAt;
     }
@@ -54,16 +54,6 @@ public class TaskEntry {
         return note;
     }
 
-    public String getDuedate() {
-        return duedate;
-    }
-    public Date getDate() {
-        return etext;
-    }
-    public Date setDate() {
-        return etext;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -71,14 +61,10 @@ public class TaskEntry {
     public void setNote(String note) {
         this.note = note;
     }
-    public void setDuedate(String duedate) {
-        this.duedate = duedate;
-    }
 
     public int getPriority() {
         return priority;
     }
-
 
     public void setPriority(int priority) {
         this.priority = priority;
@@ -88,8 +74,15 @@ public class TaskEntry {
         return updatedAt;
     }
 
-
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getDue_date() {
+        return due_date;
+    }
+
+    public void setDue_date(String due_date) {
+        this.due_date = due_date;
     }
 }

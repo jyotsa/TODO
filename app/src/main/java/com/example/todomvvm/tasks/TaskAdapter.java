@@ -50,8 +50,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     }
 
 
-
-
     /**
      * Called when ViewHolders are created to fill a RecyclerView.
      *
@@ -80,12 +78,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         String note = taskEntry.getNote();
         int priority = taskEntry.getPriority();
         String updatedAt = dateFormat.format(taskEntry.getUpdatedAt());
-        String duedate = taskEntry.getDuedate();
+        String duedate = taskEntry.getDue_date();
         //Set values
         holder.taskDescriptionView.setText(description);
         holder.updatedAtView.setText(updatedAt);
         holder.noteView.setText(note);
         holder.noteView.setText(note);
+        holder.tvw.setText("Due Date: " + duedate);
 
 
         // Programmatically set the text and color for the priority TextView
@@ -174,13 +173,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             updatedAtView = itemView.findViewById(R.id.taskUpdatedAt);
             priorityView = itemView.findViewById(R.id.priorityTextView);
             noteView = itemView.findViewById(R.id.tasknote);
-            tvw=itemView.findViewById(R.id.textView1);
-            eText=itemView.findViewById(R.id.editText1);
-
-
-
-
-            }
+            tvw = itemView.findViewById(R.id.textView1);
+            eText = itemView.findViewById(R.id.editText1);
+        }
 
         @Override
         public void onClick(View view) {

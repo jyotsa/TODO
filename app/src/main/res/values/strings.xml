@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">To-Do List</string>
 
-    <string name="main_activity_name">All Tasks</string>
+    <string name="main_activity_name">My Tasks</string>
     <string name="add_task_activity_name">Add a New Task</string>
 
     <!-- Strings for MainActivity -->
@@ -15,9 +15,9 @@
     <string name="add_note">Add Note</string>
     <string name="priority_string">Priority</string>
 
-    <string name="high_priority">High</string>
-    <string name="med_priority">Medium</string>
-    <string name="low_priority">Low</string>
+    <string name="high_priority">!!!</string>
+    <string name="med_priority">!!</string>
+    <string name="low_priority">!</string>
 
     <string name="add_button">Add</string>
     <string name="update_button">Update</string>
