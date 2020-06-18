@@ -16,6 +16,7 @@ public class TaskEntry {
     private String note;
     private int priority;
     private String duedate;
+    private Date etext;
     @ColumnInfo(name="updated_at")
     private Date updatedAt;
 
@@ -23,7 +24,7 @@ public class TaskEntry {
     public TaskEntry(String description,String note, int priority, Date updatedAt) {
         this.description = description;
         this.note=note;
-        this.duedate=duedate;
+        this.etext=etext;
         this.priority = priority;
         this.updatedAt = updatedAt;
     }
@@ -56,6 +57,12 @@ public class TaskEntry {
     public String getDuedate() {
         return duedate;
     }
+    public Date getDate() {
+        return etext;
+    }
+    public Date setDate() {
+        return etext;
+    }
 
     public void setDescription(String description) {
         this.description = description;
@@ -72,6 +79,7 @@ public class TaskEntry {
         return priority;
     }
 
+
     public void setPriority(int priority) {
         this.priority = priority;
     }
@@ -79,6 +87,7 @@ public class TaskEntry {
     public Date getUpdatedAt() {
         return updatedAt;
     }
+
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;

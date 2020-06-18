@@ -85,6 +85,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.taskDescriptionView.setText(description);
         holder.updatedAtView.setText(updatedAt);
         holder.noteView.setText(note);
+        holder.noteView.setText(note);
 
 
         // Programmatically set the text and color for the priority TextView
@@ -159,7 +160,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         TextView tvw;
         CheckBox selection;
         DatePickerDialog picker;
-        EditText eText;
+        TextView eText;
 
         /**
          * Constructor for the TaskViewHolders.
@@ -175,7 +176,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             noteView = itemView.findViewById(R.id.tasknote);
             tvw=itemView.findViewById(R.id.textView1);
             eText=itemView.findViewById(R.id.editText1);
-            eText.setInputType(InputType.TYPE_NULL);
+
 
 
 
