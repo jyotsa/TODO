@@ -142,6 +142,8 @@ public class AddEditTaskActivity extends AppCompatActivity implements DatePicker
         AddNote.setText(task.getNote());
         setPriorityInViews(task.getPriority());
 
+
+
     }
 
     /**
