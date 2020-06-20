@@ -16,6 +16,13 @@ Features:
 User Guide:
 •	Adding tasks: 
 The user can press the add floating button on the right in order to create a todo list. Here, the user can provide the description, note, due date and priority.
-![User Registration](screenshots/2.png)
-![User Registration](screenshots/3.png)
-![User Registration](screenshots/1.png)
+![Adding tasks](screenshots/2.png)
+![Setting date](screenshots/1.png)
+
+•	Viewing Todo List:
+The added todo is shown in the main page as a list of tasks with its fields .
+The completed tasks can be checked.
+The list can be updated by clicking on it and changing the fields.
+To delete the task swipe the task either ways.
+
+![Task list](screenshots/3.png)
