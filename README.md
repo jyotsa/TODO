@@ -5,13 +5,13 @@ Developing Mobile Application
 TO-DO Application
 
 Features:
-•	Add your tasks.
-•	Select a due date for your task
-•	Add note briefly describing your task.
-•	Set Priority as per your particular task.
-•	Check the task that you have completed.
-•	Edit the task created.
-•	Swipe to delete the task created.
+Add your tasks.
+Select a due date for your task
+Add note briefly describing your task.
+Set Priority as per your particular task.
+Check the task that you have completed.
+Edit the task created.
+Swipe to delete the task created.
 
 User Guide:
 •	Adding tasks: 
