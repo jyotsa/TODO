@@ -17,4 +17,4 @@ User Guide:
 •	Adding tasks: 
 The user can press the add floating button on the right in order to create a todo list. Here, the user can provide the description, note, due date and priority.
 
-(screenshot/1.jpg)
+![User Registration](screenshots/1.jpg)
